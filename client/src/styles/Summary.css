@@ -1,0 +1,80 @@
+
+  /* Summary */
+  .summary-container {
+    min-height: 100vh;
+    /*background-color: #f9fafb;*/
+    background: radial-gradient(circle,rgba(227, 242, 253, 1) 0%, rgba(215, 245, 235, 1) 100%);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .summary-inner {
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .summary-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .summary-icon {
+    width: 64px;
+    height: 64px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .check-icon {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+  }
+  
+  .summary-card {
+    margin-bottom: 2rem;
+    
+  }
+  
+  .summary-stats {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .summary-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .action-buttons {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .download-btn:hover {
+    background-color: transparent !important; /* remove fill */
+    color: #1e3a8a !important;                /* text color */
+    border: 1px solid #1e3a8a !important;     /* border */
+  }
+  

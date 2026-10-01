@@ -1,0 +1,293 @@
+/* Interview Container */
+.interview-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #eef1ef;
+    /*background: radial-gradient(circle,rgba(30, 58, 138, 1) 0%, rgba(16, 185, 129, 1) 100%); */
+  }
+  
+  /* Header Styles */
+  .interview-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    /*background: rgba(255, 255, 255, 0.95);*/
+    background: linear-gradient(90deg,rgba(30, 58, 138, 1) 0%, rgba(16, 185, 129, 1) 100%);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 1.5rem;
+  }
+
+  .color {
+    color: #EEF1EF;
+  }
+  
+  .header-content {
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .nav-path {
+    color: #EEF1EF;
+    font-weight: 800;
+  }
+
+  .progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .progress-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #eef1ef;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    color: #eef1ef;
+  }
+  
+  /* Chat Container */
+  .chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    
+  }
+  
+  .chat-messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+  
+  /* Message Styles */
+  .message-wrapper {
+    display: flex;
+    animation: messageEnter 0.3s ease-out;
+  }
+  
+  .message-wrapper.question {
+    justify-content: flex-start;
+  }
+  
+  .message-wrapper.answer {
+    justify-content: flex-end;
+  }
+  
+  .message-content {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-bubble {
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+  
+  .message-bubble.question {
+    background: #e3f2fd;
+    border-bottom-left-radius: 0.25rem;
+  }
+  
+  .message-bubble.answer {
+    background: #D7F5EB;
+    border-bottom-right-radius: 0.25rem;
+  }
+  
+  .message-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+  
+  .message-header.question {
+    color: #1976d2;
+  }
+  
+  .message-header.answer {
+    color: #10b981;
+  }
+  
+  .message-text {
+    margin: 0;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .badge-container {
+    margin-top: 0.75rem;
+  }
+  
+  .duration-badge {
+    font-size: 0.75rem;
+  }
+  
+  /* Recording Interface */
+  .recording-interface {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 1rem;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recording-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .recording-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .recording-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #d32f2f;
+    font-weight: 600;
+  }
+  
+  .recording-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #d32f2f;
+    border-radius: 50%;
+    animation: recordingPulse 1s infinite;
+  }
+  
+  .status-container {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .status-message {
+    margin: 0;
+    color: #666;
+    font-size: 0.875rem;
+  }
+  
+  .controls-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .record-button {
+    min-width: 140px;
+  }
+  
+  .icon-sm {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .next-btn:hover {
+    background-color: #10B981 !important; /* remove fill */
+    color: #EEF1EF !important;                /* text color */
+    border: 1px solid #10B981 !important;     /* border */
+  }
+  
+  /* Animations */
+  @keyframes messageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes recordingPulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .interview-header {
+      padding: 1rem;
+    }
+    
+    .chat-container {
+      padding: 1rem;
+    }
+    
+    .message-content {
+      max-width: 85%;
+    }
+    
+    .controls-container {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .controls-container .MuiButton-root {
+      width: 100%;
+    }
+  }
+  
+  /* Scrollbar Styling */
+  .chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }

@@ -1,0 +1,211 @@
+/* Category Container */
+/*linear-gradient(200deg, #1e3a8a 0%, #f8fafc 50%, #10b981 100%)*/
+.category-container {
+    min-height: 100vh;
+    padding: 2rem;
+    /*background: radial-gradient(circle,rgba(161, 181, 237, 1) 0%, rgba(126, 230, 195, 1) 100%);*/
+    background: radial-gradient(circle,rgba(30, 58, 138, 1) 0%, rgba(16, 185, 129, 1) 100%);
+
+  }
+
+  .gradient-tex {
+    background: linear-gradient(90deg, #1e3a8a 0%, #10b981 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .back-button {
+    display: fixed;
+    left: 3rem;
+    top: 2rem;   
+  }
+  
+  .back-button:hover {
+    transform: translateX(-2px);
+    opacity: 0.9;
+  }
+  
+  /* Header Styles */
+  .category-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #eef1ef;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(30, 58, 138, 0.1);
+  }
+  
+  /* Selectors Container */
+  .selectors-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .selector {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.1);
+  }
+  
+  .selector:hover {
+    border-color: #1e3a8a;
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.15);
+  }
+  
+  .selector label {
+    display: block;
+    color: #1e3a8a;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .selector select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: white;
+    color: #1e293b;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .selector select:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+  
+  /* Category Grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Category Card */
+  .category-card {
+    height: 100px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1e3a8a, #10b981);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+    border-color: #1e3a8a;
+    
+  }
+
+  /*background: linear-gradient(90deg, #1e3a8a 0%, #10b981 100%);
+    color: ffffff; */
+  
+  .category-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .category-title {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+  
+  .category-card:hover .category-title {
+    color: #1e3a8a;
+  }
+  
+  .category-subtitle {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .category-card:hover .category-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .category-container {
+      padding: 1rem;
+    }
+    
+    .category-header {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .selectors-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .selector {
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .category-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .category-header {
+      font-size: 1.75rem;
+    }
+    
+    .category-card {
+      padding: 1.5rem;
+    }
+  }
+  
